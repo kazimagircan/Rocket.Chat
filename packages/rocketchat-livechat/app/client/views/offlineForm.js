@@ -21,6 +21,7 @@ Template.offlineForm.events({
 		const form = event.currentTarget;
 
 		const data = {
+			tc:form.elements['tc'].value,
 			name: form.elements['name'].value,
 			email: form.elements['email'].value,
 			message: form.elements['message'].value
@@ -53,7 +54,7 @@ Template.offlineForm.onCreated(function() {
 	this.validateForm = (form) => {
 		let valid = true;
 
-		const fields = ['name', 'email', 'message'];
+		const fields = ['tc','name', 'email', 'message'];
 
 		for (let i = 0; i < fields.length; i++) {
 			$(form.elements[fields[i]]).removeClass('field-error');
